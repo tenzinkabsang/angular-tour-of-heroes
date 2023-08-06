@@ -8,16 +8,6 @@ import { MessageService } from '../message.service';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent {
-  messages: string[] = [];
 
-  constructor(private messageService: MessageService){}
-
-  ngOnInit(): void {
-    this.messageService.getAll().subscribe(m => this.messages = m);
-  }
-
-  clearMessages(): void {
-   // this.messages = [];
-    this.messageService.clear();
-  }
+  constructor(public messageService: MessageService){}
 }
